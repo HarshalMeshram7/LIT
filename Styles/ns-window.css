@@ -1,0 +1,146 @@
+#nswindow
+{
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    position: fixed;
+    position: absolute;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#nswindow #nswindowContent
+{
+    text-align: center;
+    left: 4px;
+    right: 4px;
+    top: 4px;
+    bottom: 4px;
+    position: absolute;
+    background: #95aab9;
+    border: 1px solid #95aab9;
+    overflow: auto; /*contains floating elements*/ /*IE6 rule*/
+    _zoom: 1;
+}
+
+#nswindow .loader
+{
+    background: url(images/Msg/loader.gif)50% no-repeat;
+    top: 40%;
+    left:45%;
+    margin-top: -15px;
+    width: 60px;
+    height: 80px;
+    position: absolute;
+    text-align: center;
+    color: #666;
+    border: none;
+}
+
+#nswindow .title
+{
+    float: left;
+    padding-left: 5px;
+    padding-bottom: 10px; /*IE6 rules*/
+    _display: block;
+    _position: relative;
+    margin-top: 0px;
+}
+
+#nswindow .controlbar
+{
+    overflow: hidden;
+    padding: 0px 30px 0px 10px;
+    /*cursor: move; /*IE6 rule*/
+    _zoom: 1;
+}
+
+#nswindow a.close
+{
+    float: right;
+    height: 20px;
+    width: 20px;
+    margin-right: -30px;
+    text-indent: -999em;
+    margin-top: 13px;
+    padding-right: 5px; /*border-left: 1px solid #7f7f7f;     border-bottom: 1px solid #7f7f7f;     -moz-border-radius-bottomleft: 3px;     -webkit-border-bottom-left-radius: 3px;     border-bottom-left-radius: 3px;     /*rules for IE7 and below*/ /*IE6 rule*/
+    _display: inline;
+}
+
+#nswindow a.close:hover
+{
+    background-position: bottom left;
+}
+
+.nswindowOverlay, .nswindowContainer
+{
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    position: fixed;
+    background-color: transparent;
+}
+* html .nswindowOverlay, * html .nswindowContainer
+{
+    /* ie6 hack */
+    position: absolute;
+    height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+    width: expression(document.body.scrollWidth> document.body.offsetWidth? document.body.scrollWidth: document.body.offsetWidth+ 'px');
+}
+/*------------------------------------------------------*/
+#nswindow.yellow
+{
+    background-color: #0E0C0D;
+    border: 1px solid #0E0C0D;
+}
+#nswindow.yellow .title
+{
+    color: White;
+    font-size: 11x;
+    font-weight:bold;
+}
+#nswindow.yellow .controlbar
+{
+    color: #fff;
+    text-shadow: none;
+    font-weight:lighter;
+    background-color: #383939;
+    background-image: -webkit-linear-gradient(top,#A1A4A5 0,#626363 60%,#383939 60%,#0E0C0D 100%);
+    background-image: -moz-linear-gradient(top,#A1A4A5 0,#626363 60%,#383939 60%,#0E0C0D 100%);
+    background-image: -ms-linear-gradient(top,#A1A4A5 0,#626363 60%,#383939 60%,#0E0C0D 100%);
+    background-image: -o-linear-gradient(top,#A1A4A5 0,#626363 60%,#383939 60%,#0E0C0D 100%);
+    background-image: linear-gradient(top,#A1A4A5 0,#626363 60%,#383939 60%,#0E0C0D 100%);
+    font-family: "Segoe UI" ,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    border-color: #0E0C0D;
+    height: 35px;
+}
+#nswindow.yellow a.close
+{
+    /*background: url(../../images/Msg/delete-icon.png) no-repeat;*/
+    background: url(images/ns-window/black/wowwindow-close2.gif) no-repeat;
+}
+#nswindow.progress
+{
+    background: url(../img/shop-online.jpg);
+    border: 1px solid #fff;
+    width: 220px;
+    height: 80px;
+}
+#nswindow.progress #nswindowContent
+{
+    left: 8px;
+    right: 8px;
+    top: 8px;
+    bottom: 8px;
+    background: url(../img/shop-online2.jpg);
+    border: none;
+}
+
+/*#nswindow.progress  .loader {
+	background: url(../img/progress.gif) 15px 25px no-repeat;
+}*/

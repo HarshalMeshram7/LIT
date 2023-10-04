@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using PPWebValidation;
+
+public partial class Dtop_panels_ViewsMenu : System.Web.UI.Page
+{
+    #region "Veriables"
+    protected List<cViewMenu> m_lPlanViewMenu;
+    protected int m_iIndex = 0;
+    #endregion
+    #region "Event"
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        m_lPlanViewMenu = Session[cPPGlobal.PPSession.PVMenu.ToString()] as List<cViewMenu>;
+    }
+    #endregion
+}

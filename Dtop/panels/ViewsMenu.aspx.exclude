@@ -1,0 +1,38 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ViewsMenu.aspx.cs" Inherits="Dtop_panels_ViewsMenu" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .Pointer
+        {
+            cursor: pointer;
+            cursor: hand;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1">
+    <div id="main">
+     <h1 style=" margin:-50px 0 0 45px;">
+            Reports/Views</h1>
+        <div class="basic" style="float: left;" id="list1a">
+            <%foreach (cViewMenu lt in m_lPlanViewMenu)
+              { %>
+            <a>
+                <%=lt.Description %></a>
+            <div style="height: 440px; overflow: auto; color: Black;">
+                <%foreach (var MItem in lt.MenuItems)
+                  {%>
+                <p class="Pointer" id="<%=MItem.sStringId%>" title="<%=MItem.Description %>" onmousedown="PlanViewsPanelMenu(this);">
+                    <%=MItem.Description %><br />
+                    <%} %>
+                </p>
+            </div>
+            <%} %>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

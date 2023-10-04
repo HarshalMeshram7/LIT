@@ -1,0 +1,90 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PBMenu.aspx.cs" Inherits="Dtop_panels_Menu" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        ul li
+        {
+            margin-bottom: 2px;
+        }
+        .main
+        {
+            display: block;
+            overflow: auto;
+        }
+        .circle
+        {
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            float: left;
+            color: #fff;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            background: linear-gradient(to bottom , #43D4DE 0%, #007279 100%);
+        }
+        .link
+        {
+            position: relative;
+            padding-left: 40px;
+        }
+        .Pblink
+        {
+            position: relative;
+            padding-left: 5px;
+            font-size: 12px;
+            color: #fff;
+            line-height: 20px;
+            text-align: left;
+            text-decoration: none;
+        }
+        .Pointer
+        {
+            cursor: pointer;
+            cursor: hand;
+        }
+        .basic a
+        {
+            background-color: #80cfe2;
+            border-top: 1px solid #133C44;
+            border-bottom: 1px solid #133C44;
+            background: -prefix-linear-gradient(top, #97C2D7, #6AA6C2 50%, #358DB0 50%,#7BBBCF 100%);
+            background: linear-gradient(to bottom, #97C2D7, #6AA6C2 50%, #358DB0 50%,#7BBBCF 100%);
+            background-image: -webkit-linear-gradient(top,#97C2D7 ,#6AA6C2 50%,#358DB0 50%,#7BBBCF 100%);
+            color: #fff;
+            text-shadow: none;
+            font-family: "Segoe UI" ,Arial,Helvetica,sans-serif;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h1 style="margin: -38px 0 0 40px;">
+            Planbook Templates</h1>
+        <div class="basic" style="float: left; padding-left: 15px;" id="list1a">
+            <a>Data Input Template</a>
+            <div style="height: 500px; overflow: auto; padding: 5px 0 0 10px;">
+                <%  foreach (var lt in m_lPlanbookMenu)
+                    {
+                        m_iIndex++;                    
+                %>
+                <div style="height: 22px; overflow: auto; color: Black;">
+                    <p class="Pointer" id="<%=lt.iIntId + "|" + lt.Type + "|" + lt.sStringId%>" onclick="PlanBookSideMenu(this);"
+                        href="javascript:void(0);" style="margin: 0px; padding: 0px;">
+                        <%=lt.Description %></p>
+                </div>
+                <%} %>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
